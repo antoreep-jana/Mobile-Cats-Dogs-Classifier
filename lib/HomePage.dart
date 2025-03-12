@@ -37,37 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  //Interpreter? _interpreter;
-
-  // @override
-  // void initState(){
-  //   super.initState();
-  //   _loadModel();
-  // }
-
-  // Future<void> _loadModel() async{
-  //   try{
-  //     _interpreter = await Interpreter.fromAsset('assets/model_unquant.tflite');
-  //     print("TFLITE model loaded successfully!");
-  //   }catch (e){
-  //     print("Failed to load tflite model");
-  //   }
-  // }
-
-  // Future<void> _loadModel() async {
-  //   String? res = await Tflite.loadModel(
-  //     model: "assets/model.tflite",
-  //   );
-  //   print("TFLite Model Loaded: $res");
-  // }
-
-  // @override
-  // void dispose(){
-  //  // _interpreter?.close();
-  //   Tflite.close();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,6 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   print("Infer using TFLite Model");
                   await _tfLiteInference.loadModel();
                   print("Model Loaded sucessfully");
+
+                  
 
                 },
                 child: const Text("Infer Offline (On-Mobile)"),
